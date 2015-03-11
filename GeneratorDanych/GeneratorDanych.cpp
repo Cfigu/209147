@@ -15,7 +15,7 @@
 
 #define ILOSC 10e6	// ile utworzony plik ma miec w sobie liczb
 #define NAJWIEKSZA INT_MAX/2 // najwieksza mozliwa liczba zapisana do pliku
-#define NAJMNIEJSZA INT_MIN/2// najmniejsza mozliwa liczba zapisana do pliku
+#define NAJMNIEJSZA 0// najmniejsza mozliwa liczba zapisana do pliku
 using namespace std;
 
 int main()
@@ -31,10 +31,5 @@ int main()
 	srand( time( NULL ) ); // uzaleznia losowane liczby od stanu zegara
 
 	for(int i = 0; i < ILOSC; ++i)
-	{
 		plikwy << (rand() % NAJWIEKSZA) + NAJMNIEJSZA << ' ';
-	}
 }
-
-
-
