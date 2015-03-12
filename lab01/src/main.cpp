@@ -1,6 +1,6 @@
-/*
- * !!!!!!!! UWAGA
- * !!!!!!!! PLIK "dane.dat" MUSI SIED ZNAJDOWAC W KATALOGU .../lab01
+/*! \file main.cpp
+ *  UWAGA
+ *  PLIK "dane.dat" MUSI SIE ZNAJDOWAC W KATALOGU ../lab01
  *  Created on: 11-03-2015
  *      Author: turbowarkocz
  */
@@ -9,19 +9,18 @@
 #include <vector> 	// vector<int>, vector::push_back(), vector::size()
 #include <ctime>    // clock(), clock_t, CLOCKS_PER_SEC
 #include <cstdlib>	// exit()
+#include "operacja.h"
 
 #define ILOSC_POWTORZEN 10
 
 using namespace std;
 
-void operacja(vector<int> &);
-
 int main()
 {
-	clock_t zegar; 		// czas w tickach procesora
-	double czas_w_s;	// czas w sekundach
-	double tab_wynikow[ILOSC_POWTORZEN];
-	int temp; 			// zmienna pomocnicza do wczytywania danych z pliku
+	clock_t zegar; 		//!< czas w tickach procesora
+	double czas_w_s;	//!< czas w sekundach
+	//double tab_wynikow[ILOSC_POWTORZEN];
+	int temp; 			//!< zmienna pomocnicza do wczytywania danych z pliku
 	double srednia = 0;
 	vector<int> dane;
 
@@ -45,17 +44,10 @@ int main()
 		zegar = clock() - zegar;
 
 		czas_w_s = (double)zegar/CLOCKS_PER_SEC;
-		tab_wynikow[i] = czas_w_s;
+		//tab_wynikow[i] = czas_w_s;
 		srednia += czas_w_s;
 	// KONIEC PETLI
 	}
 	cout << "Sredni czas wykonania operacji: " << srednia/ILOSC_POWTORZEN;
 	cout << endl;
-}
-
-
-void operacja(vector<int> &wektor)
-{
-	for(unsigned int i = 0; i < wektor.size(); ++i)
-		wektor[i] *= 2;
 }
