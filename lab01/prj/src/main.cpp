@@ -1,6 +1,5 @@
-#include <iostream>
-
+#include "../inc/benchmark.h"
 int main()
 {
-	std::cout << "Rudolf Pies" << std::endl;
+	Benchmark();
 }
