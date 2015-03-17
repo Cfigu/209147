@@ -1,6 +1,6 @@
 CFLAGS = -c -pedantic -Wall
 CMP = g++
-OBJ = obj/main.o obj/benchmark.o obj/operacja.o
+OBJ = obj/main.o obj/benchmark.o obj/operacja.o obj/kontener.o
 
 ../program: $(OBJ)
 	$(CMP) $^ -o $@
@@ -13,5 +13,9 @@ obj/benchmark.o: src/benchmark.cpp inc/benchmark.h
 
 obj/operacja.o: src/operacja.cpp inc/operacja.h
 	$(CMP) $(CFLAGS) $< -o $@
+
+obj/kontener.o: src/kontener.cpp inc/kontener.h
+	$(CMP) $(CFLAGS) $< -o $@
+
 clean:
 	rm -f obj/*.o

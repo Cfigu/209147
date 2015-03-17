@@ -13,3 +13,5 @@ obj/benchmark.o: src/benchmark.cpp inc/benchmark.h
 
 obj/operacja.o: src/operacja.cpp inc/operacja.h
 	$(CMP) $(CFLAGS) $< -o $@
+clean:
+	rm -f obj/*.o
