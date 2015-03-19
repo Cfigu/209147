@@ -1,0 +1,26 @@
+#include "../inc/benchmark.h"
+
+#include <iostream>
+using namespace std;
+
+int main()
+{	
+	Stos_a sztos;
+	
+	if(sztos.empty())
+		cout << "Pusty!" << endl;
+	
+	sztos.push(1);
+	if(sztos.empty())
+		cout << "Pusty!" << endl;
+	sztos.push(2);
+	sztos.push(3);	
+	
+	cout << sztos.pop() << endl;
+	cout << sztos.pop() << endl;
+	cout << sztos.pop() << endl;
+
+	if(sztos.empty())
+		cout << "Pusty!" << endl;
+	// Benchmark();
+}
