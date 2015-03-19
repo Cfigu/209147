@@ -32,7 +32,7 @@ void Stos_a::push(int val)
 int Stos_a::pop()
 {
 	// Zwraca najwyższy element i zmniejsza licznik rozmiaru o 1
-	return(this->tablica[this->rozmiar_stosu--]);	
+	return(this->tablica[--this->rozmiar_stosu]);	
 }
 
 bool Stos_a::empty()
