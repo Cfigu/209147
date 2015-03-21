@@ -16,11 +16,11 @@
 #include "kontener.h"
 #include "stos.h"
 #include "kolejka.h"
+#include "stos_arr.h"
 
 #include <fstream> 	// ifstream()
 #include <iostream> 	// cout, cerr, endl
 #include <vector> 	// vector<int>, vector::push_back(),vector::size()
-#include <ctime>   	// clock(), clock_t, CLOCKS_PER_SEC
 #include <cstdlib>	// exit()
 #include <cmath>	//pow()
 

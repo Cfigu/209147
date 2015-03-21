@@ -9,13 +9,16 @@
 /*!
 	\brief Kolejka, abstrakcyjna struktura danych z buforem typu LIFO
 */
-class Kolejka: public Kontener
+namespace ls
 {
+class Kolejka: public ls::Kontener
+{
+
 public:
 /*!
 	\brief Pop kolejki jaki jest, każdy widzi. Usuwa najstarszy element i zwraca wartość przez niego przechowywaną.
 */
 	int pop(){ return this->erase(this->size() -1);}
 };
-
+}
 #endif

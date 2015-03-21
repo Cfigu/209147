@@ -1,4 +1,4 @@
-LAB01 - mnożenie przez 2*.
+LAB03 - implementacja podstawowych strukur danych z użyciem tablic.
 
 0. W pliku .../lab01/prj/inc/ustawienia.h dostępne są makra regulujące pracę związaną z tworzeniem, wczytywaniem, zapisem i pomiarem danych.
 
@@ -12,7 +12,4 @@ LAB01 - mnożenie przez 2*.
 	
 $ gnuplot
 > set logscale xy
->plot "wyniki.dat"
-
-________________________
-*Mnożenie przez 2 jest tożsame z operacją przesunięcia bitowego o 1 w lewo, jednak obydwie operacje mają badzo zbliżone osiągi.
+> plot "wyniki.dat"

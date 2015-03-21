@@ -1,18 +1,18 @@
 #include "../inc/stos_arr.h"
 
-Stos_a::Stos_a(const Stos_a &lewy)
+arr::Stos::Stos(const Stos &lewy)
 {
 	tablica = new int[lewy.rozmiar_stosu];
 	for(int i = 0; i < lewy.rozmiar_stosu; ++i)
 		tablica[i] = lewy.tablica[i];
 }
 
-Stos_a::~Stos_a()
+arr::Stos::~Stos()
 {
 	delete [] tablica;
 }
 
-void Stos_a::push(int val)
+void arr::Stos::push(int val)
 {
 	if(this->tablica == NULL)
 	{
@@ -23,24 +23,24 @@ void Stos_a::push(int val)
 		this->tablica[rozmiar_stosu] = val;
 	else
 	{
-		this->rozszerz_x2();
+		this->rozszerz_1();
 		this->tablica[rozmiar_stosu] = val;
 	}
 	++this->rozmiar_stosu;
 }
 
-int Stos_a::pop()
+int arr::Stos::pop()
 {
 	// Zwraca najwyższy element i zmniejsza licznik rozmiaru o 1
 	return(this->tablica[--this->rozmiar_stosu]);	
 }
 
-bool Stos_a::empty()
+bool arr::Stos::empty()
 {
 	return(this->rozmiar_stosu == 0);
 }
 
-void Stos_a::rozszerz_x2()
+void arr::Stos::rozszerz_x2()
 {
 	// Rezerwacja nowego bloku pamięci
 	int *temp = new int[this->rozmiar_stosu*2];
@@ -55,7 +55,7 @@ void Stos_a::rozszerz_x2()
 	this->pojemnosc_stosu *= 2;	
 }
 
-void Stos_a::rozszerz_1()
+void arr::Stos::rozszerz_1()
 {
 	// Rezerwacja nowego bloku pamięci
 	int *temp = new int[this->rozmiar_stosu + 1];

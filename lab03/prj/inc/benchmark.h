@@ -21,7 +21,6 @@
 #include <fstream> 	// ifstream()
 #include <iostream> 	// cout, cerr, endl
 #include <vector> 	// vector<int>, vector::push_back(),vector::size()
-#include <ctime>   	// clock(), clock_t, CLOCKS_PER_SEC
 #include <cstdlib>	// exit()
 #include <cmath>	//pow()
 
@@ -39,14 +38,12 @@
 	operacja() zostaje przekazana referencja do obiektu
 	zawierającego ciąg danych. Po wyjściu z funkcji operacja()
 	do zmiennej typu clock_t() zostaje tym razem zapisana różnica
-	czasów procesora pomiędzy rozpoczęciem procesu a zakończeniem
-	pracy funkcji operacja(). Czas ten przeliczany jest na sekundy
-	i zapisany do pliku wyjściowego.  W "ustawienia.h"
-	określona jest ilość powtórzeń pomiaru. Pomiary zaczynają się
-	od operacji na jednej wartości i kończą na ciąu danych o 
-	długości największej potęgi dziesiątki. Pomiary powtarzane są
-	co dekadę. Informację o największej potędze dziesiątki
-	dostarcza funkcja licz_dekady().
+	czasów procesora pomiędzy rozpoczęciem procesu a wartością
+	typu clock_t zwróconą przez funkcję operacja(). Czas ten 	 przeliczany jest na sekundy i zapisany do pliku wyjściowego.  		W "ustawienia.h" określona jest ilość powtórzeń pomiaru.
+	Pomiary zaczynają się od operacji na jednej wartości i kończą 
+	na ciąu danych o długości największej potęgi dziesiątki.
+	 Pomiary powtarzane są	co dekadę. Informację o największej 
+	potędze dziesiątki dostarcza funkcja licz_dekady().
 */
 void Benchmark();
 /*!

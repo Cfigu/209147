@@ -6,7 +6,6 @@
 #ifndef CEGLA_H
 #define CEGLA_H
 
-#include <cstdlib> //NULL
 /*!
 	\brief Struktura pomocnicza cegla
 
@@ -17,6 +16,7 @@ struct cegla
 {
 	int dana;
 	cegla *nastepna;
+	cegla():alfa(NULL){}
 };
 
 #endif

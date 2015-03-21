@@ -7,15 +7,19 @@
 
 #include "../inc/operacja.h"
 #include <iostream>
-void operacja(std::vector<int> &wektor, unsigned int ilosc_operacji)
-{
-	Stos sztos;
-	Kolejka kolega;
-	Kontener lista;
 
+clock_t operacja(std::vector<int> &wektor, unsigned int ilosc_operacji)
+{
+	clock_t czas;
+	arr::Stos sztos;
 	for(unsigned int i = 0; i < ilosc_operacji; ++i)
-		sztos.push(i);
-		//kolega.push(i);
-		//lista.insert(i,i<5?0:i%5);
+		sztos.push(wektor[i]);
+	// Zapisanie czasu wykonywania operacji
+	czas = clock();
+	// Zwalnianie pamięci, nie liczone przez zegar.
+	//for(int i = sztos.size(); i > 0; --i)
+	//	sztos.erase(0);
+
+	return czas;
 }
 

@@ -4,13 +4,13 @@
 */
 #include "../inc/kontener.h"
 
-Kontener::~Kontener()
+ls::Kontener::~Kontener()
 {
 	const int rozmiar = this->size();
 	for(int i = 0; i < rozmiar; ++i)
 		this->erase(0);
 }
-void Kontener::push(int wart)
+void ls::Kontener::push(int wart)
 {
 	cegla *nowa = new cegla;
 	nowa->dana = wart;
@@ -18,18 +18,19 @@ void Kontener::push(int wart)
 	alfa = nowa;
 }
 
-void Kontener::insert(int wart, int indeks)
+void ls::Kontener::insert(int wart, int indeks)
 {
 	if(indeks == 0) this->push(wart);
 	else
-	{
+	{	
+		int rozmiar = this->size();
 		cegla *starsza = this->alfa;	
 		cegla *mlodsza = this->alfa;
 		// ... od nowo dodawanej
 		cegla *nowa = new cegla;
 
 		nowa->dana = wart;
-		if(indeks > 0 && indeks < this->size())
+		if(indeks > 0 && indeks <= rozmiar)
 		{	// Pomiędzy 'starsza' a 'mlodsza' wejdzie
 			// nowa cegiełka
 			for(int i = 0; i < indeks; ++i)
@@ -46,7 +47,7 @@ void Kontener::insert(int wart, int indeks)
 	}
 }
 
-int Kontener::size()
+int ls::Kontener::size()
 {
 	int wielkosc = 0;
 	cegla *temp = this->alfa;
@@ -61,7 +62,7 @@ int Kontener::size()
 	return wielkosc;
 }
 
-int Kontener::erase(int indeks)
+int ls::Kontener::erase(int indeks)
 {
 	cegla *usuwany = this->alfa; // pomocniczy na usuwaną cegłę
 	// pomocniczy na cegłę o 1 młodszą	
@@ -72,16 +73,18 @@ int Kontener::erase(int indeks)
 	if(indeks == 0)
 	{
 		usuneli_mnie = usuwany->dana;
+		// Najmłodszy element to teraz o 1 starszy po usuwanym
 		this->alfa = usuwany->nastepna; 
 	}
-	if(indeks > 0 && indeks < this->size())
+	if(indeks > 0 && indeks <= this->size())
 	{
 		// Podróż wskaźnika w stronę usuwanej cegiełki
 		for(int i = 0; i < indeks; ++i)
 		{
-			// Zapisanie adresu nowszej cegiełki
 			if (i == indeks - 1)
+				// Zapisanie adresu nowszej cegiełki
 				przed_usuwanym = usuwany;
+			// Przesunięcie wskaźnika na starszą cegłę
 			usuwany = usuwany->nastepna;
 		}
 		// Teraz wskaźnik 'usuwany' wskazuje odpowiednią cegłę
@@ -90,11 +93,10 @@ int Kontener::erase(int indeks)
 		przed_usuwanym->nastepna = usuwany->nastepna;
 	}
 	delete usuwany;
-
 	return usuneli_mnie;
 }
 
-int Kontener::find(int wartosc)
+int ls::Kontener::find(int wartosc)
 {
 	cegla *temp = this->alfa;
 	int indeks = 0;
@@ -111,7 +113,7 @@ int Kontener::find(int wartosc)
 	return indeks;
 }
 
-void Kontener::show()
+void ls::Kontener::show()
 {
 	cegla *temp = this->alfa;
 

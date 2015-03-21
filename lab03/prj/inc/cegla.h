@@ -16,6 +16,7 @@ struct cegla
 {
 	int dana;
 	cegla *nastepna;
+	cegla():nastepna(NULL){}
 };
 
 #endif

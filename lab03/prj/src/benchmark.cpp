@@ -9,7 +9,8 @@ void Benchmark()
 	int ilosc_dekad;	// ilość przedziałek na osi x wykresu
 	int temp; 		// pomocnicza do wczytywania z pliku
 	
-	vector<int> dane;	// Tutaj wczytywane są dane z pliku
+	// Tutaj wczytywane są dane z pliku
+	vector<int> dane(ILOSC + 100);
 
 	ifstream plikwe(NAZWA_PLIKU_WE); // Otwieranie pliku z danymi
 	ofstream plikwy(NAZWA_PLIKU_WY); // Tworzenie pliku na wyniki
@@ -28,9 +29,8 @@ void Benchmark()
 	}
 
 	// Wczytuj liczby z pliku do pojawienia się EOF
-	while(plikwe >> temp)
-		dane.push_back(temp);
-
+	for(int i = 0; plikwe >> temp; ++i)
+		dane[i] = temp;
 	// Tworzenie oznaczenia kolumn w pliku z wynikami
 	plikwy << "#Operacji\tCzas trwania[s]" << endl; 
 
@@ -46,15 +46,13 @@ void Benchmark()
 		{
 			zegar = clock();
 			// 	operacja
-			operacja(dane, (unsigned int)pow(10, i));
-
-			zegar = clock() - zegar;
+			zegar = operacja(dane, (unsigned int)pow(10, i)) - zegar;
 
 			czas_w_s = (double)zegar/CLOCKS_PER_SEC;
 			srednia += czas_w_s;
 		}// KONIEC PETLI
 		srednia /= ILOSC_POWTORZEN;
-		plikwy << "10e" << i << "\t\t" << srednia << endl;
+		plikwy << "1e" << i << "\t\t" << srednia << endl;
 	}// KONIEC PETLI	
 }
 

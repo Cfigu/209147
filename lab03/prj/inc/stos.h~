@@ -9,7 +9,8 @@
 /*!
 	\brief Stos, abstrakcyjna struktura danych z buforem typu FIFO
 */
-class Stos: public Kontener(){
+class Stos: public Kontener{
+
 public:
 ~Stos(){ 
 	const int rozmiar = this->size();

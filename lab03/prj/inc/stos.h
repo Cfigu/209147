@@ -9,7 +9,10 @@
 /*!
 	\brief Stos, abstrakcyjna struktura danych z buforem typu FIFO
 */
-class Stos: public Kontener{
+namespace ls
+{
+class Stos: public ls::Kontener{
+
 public:
 ~Stos(){ 
 	const int rozmiar = this->size();
@@ -21,5 +24,5 @@ public:
 */
 	int pop(){ return this->erase(0);}
 };
-
+}
 #endif

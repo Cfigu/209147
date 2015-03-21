@@ -1,26 +1,22 @@
 #include "../inc/benchmark.h"
 
-#include <iostream>
-using namespace std;
-
 int main()
 {	
-	Stos_a sztos;
-	
-	if(sztos.empty())
-		cout << "Pusty!" << endl;
-	
-	sztos.push(1);
-	if(sztos.empty())
-		cout << "Pusty!" << endl;
-	sztos.push(2);
-	sztos.push(3);	
-	
-	cout << sztos.pop() << endl;
-	cout << sztos.pop() << endl;
-	cout << sztos.pop() << endl;
+	ls::Stos sztos;
+	ls::Kolejka kol;
 
-	if(sztos.empty())
-		cout << "Pusty!" << endl;
-	// Benchmark();
+	sztos.push(23);
+	sztos.push(54);
+
+	std::cout << sztos.pop() << std::endl;
+	std::cout << sztos.pop() << std::endl;
+	std::cout << sztos.size() << std::endl;
+
+	kol.push(98);
+	kol.push(12);
+
+	std::cout << kol.pop() << std::endl;
+	std::cout << kol.pop() << std::endl;
+	std::cout << kol.size() << std::endl;
+	//Benchmark();
 }

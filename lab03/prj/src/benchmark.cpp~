@@ -3,16 +3,17 @@
 using namespace std;
 void Benchmark()
 {
-	clock_t zegar; 		//!< czas w tickach procesora
-	double czas_w_s;	//!< czas w sekundach
-	double srednia;
-	int ilosc_dekad;
-	int temp; 			//!< zmienna pomocnicza do wczytywania danych z pliku
+	clock_t zegar; 		// czas w tickach procesora
+	double czas_w_s;	// czas w sekundach
+	double srednia;		// pomocnicza do liczenia średniej
+	int ilosc_dekad;	// ilość przedziałek na osi x wykresu
+	int temp; 		// pomocnicza do wczytywania z pliku
 	
-	vector<int> dane;
+	// Tutaj wczytywane są dane z pliku
+	vector<int> dane(ILOSC + 100);
 
-	ifstream plikwe(NAZWA_PLIKU_WE);
-	ofstream plikwy(NAZWA_PLIKU_WY);
+	ifstream plikwe(NAZWA_PLIKU_WE); // Otwieranie pliku z danymi
+	ofstream plikwy(NAZWA_PLIKU_WY); // Tworzenie pliku na wyniki
 	
 
 	if(!plikwe)
@@ -27,26 +28,25 @@ void Benchmark()
 		exit(1);
 	}
 
-	// Wczytuj liczby z pliku do pojawienia sie EOF
-	while(plikwe >> temp)
-		dane.push_back(temp);
-
+	// Wczytuj liczby z pliku do pojawienia się EOF
+	for(int i = 0; plikwe >> temp; ++i)
+		dane[i] = temp;
 	// Tworzenie oznaczenia kolumn w pliku z wynikami
-	plikwy << "Operacji\tCzas trwania[s]" << endl; 
+	plikwy << "#Operacji\tCzas trwania[s]" << endl; 
 
-	// Obliczanie ilosci dekad
+	// Obliczanie ilości dekad
 	ilosc_dekad = licz_dekady(dane.size());
-
+	
+	// Wykonywanie pomiaru co dekadę
 	for(int i = 0; i <= ilosc_dekad; ++i)
 	{
 		srednia = 0;
+		// Wykonywanie kilku pomiarów i uśrednienie wyniku
 		for(int j = 0; j < ILOSC_POWTORZEN; ++j)
 		{
 			zegar = clock();
 			// 	operacja
-			operacja(dane, (unsigned int)pow(10, i));
-
-			zegar = clock() - zegar;
+			zegar = operacja(dane, (unsigned int)pow(10, i)) - zegar;
 
 			czas_w_s = (double)zegar/CLOCKS_PER_SEC;
 			srednia += czas_w_s;

@@ -6,9 +6,12 @@
 
 #include <vector>
 #include <cassert>
+#include <ctime>   	// clock(), clock_t, CLOCKS_PER_SEC
 
 #include "stos.h"
 #include "kolejka.h"
+#include "stos_arr.h"
+#include "kolejka_arr.h"
 
 /*! \brief Wykonuje operację na wczytanym ciągu danych.
  *
@@ -17,6 +20,6 @@
  * \param[in] wektor Referencja do wczytanego ciąg danych.
  * \param[in] ilosc_operacji Określa na ilu pierwszych elementach wektora wektor ma zostać wykonana operacja.
  */
-void operacja(std::vector<int> &wektor, unsigned int ilosc_operacji);
+clock_t operacja(std::vector<int> &wektor, unsigned int ilosc_operacji);
 
 #endif

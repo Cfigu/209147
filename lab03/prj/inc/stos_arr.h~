@@ -24,6 +24,8 @@ public:
 	Stos_a(): tablica(NULL), rozmiar_stosu(0), pojemnosc_stosu(0){}
 /*!
 	\brief Konstruktor kopiujący klasy Stos_a.
+	
+	Bezużyteczny dla trzeciego zadania, ale na pewno kolega się ucieszy.
 */
 	Stos_a(const Stos_a &lewy);
 /*!
@@ -40,8 +42,14 @@ public:
 	int pop();
 /*!
 	\brief Sprawdza, czy stos jest pusty.
+
+	\return Zwraca prawdę, jeżeli kolejka jest pusta. W przeciwnym razie zwraca false.
 */
 	bool empty();
+/*!
+	\brief Zwraca rozmiar stosu.
+*/
+	int size(){return rozmiar_stosu;}
 };
 
 #endif

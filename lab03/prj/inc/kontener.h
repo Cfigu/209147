@@ -9,7 +9,8 @@
 #include <cstdlib> //NULL
 #include <iostream>
 #include "cegla.h"
-
+namespace ls
+{
 class Kontener
 {
 protected:
@@ -35,6 +36,14 @@ public:
 	oddalonym o 'indeks' miejsc od początku kontenera.
 
 	UWAGA: Indeks liczony jest od zera, od najmłodszej cegły.
+	
+	Przykład 1:
+	Wyrażenie obj.insert(5,0) jest równoważne wyrażeniu obj.push(5)
+	- element zawierający wartość 5 jest teraz najmłodszym
+	elementem.
+	Przykład 2:
+	Wyrażenie obj.insert(3,obj.size()) czyni element zawierający
+	wartosć 3 najstarszym elementem. 
 */
 	void insert(int wartosc, int indeks);
 /*!
@@ -58,6 +67,14 @@ public:
 	młodszej cegły wskazuje na cegłę starszą od usuwanej, zostaje
 	zapisana wartość przechowywana przez usuwaną cegłę i wreszcie
 	zwolniona zostaje pamięć zajmowana dotychczas przez cegłę.
+
+	Przykład 1:
+	Wyrażenie obj.erase(0) usuwa najmłodszy element kontenera.
+	Przykład 2:
+	Wyrażenie obj.erase(obj.size() - 1) usuwa najstarszy element.
+	Przykład 3:	
+	Wyrażenie obj.erase(obj.size()) nie zmienia kontenera.
+		 
 	\return Zwraca wartość przechowywaną w usuniętej cegiełce.
 */
 	int erase(int);
@@ -80,6 +97,6 @@ public:
 */
 	void show();
 };
-
+}
 
 #endif

@@ -11,7 +11,7 @@
 #define USTAWIENIA_H
 
 /*! Określa dłuość ciągu danych stworzonych przez program generuj. */
-#define ILOSC 10e6
+#define ILOSC 1e7
 /*! Określa największą możliwą liczbę do wygenerowania. */
 #define KRES_GORNY INT_MAX/2 - 1
 /*! Określa najmniejszą możliwą liczbę do wygenerowania. */

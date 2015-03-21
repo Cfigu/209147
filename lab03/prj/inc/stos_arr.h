@@ -2,7 +2,9 @@
 #define STOS_ARR_H
 
 #include <cstdlib> // NULL
-class Stos_a
+namespace arr
+{
+class Stos
 {
 	// Przechowuje adres do pierwszego elementu stosu
 	int *tablica;
@@ -19,19 +21,19 @@ class Stos_a
 
 public:
 /*! 
-	\brief Konstruktor domyślny klasy Stos_a. 
+	\brief Konstruktor domyślny klasy Stos. 
 */
-	Stos_a(): tablica(NULL), rozmiar_stosu(0), pojemnosc_stosu(0){}
+	Stos(): tablica(NULL), rozmiar_stosu(0), pojemnosc_stosu(0){}
 /*!
-	\brief Konstruktor kopiujący klasy Stos_a.
+	\brief Konstruktor kopiujący klasy Stos.
 	
 	Bezużyteczny dla trzeciego zadania, ale na pewno kolega się ucieszy.
 */
-	Stos_a(const Stos_a &lewy);
+	Stos(const Stos &lewy);
 /*!
-	\brief Destruktor klasy Stos_a.
+	\brief Destruktor klasy Stos.
 */
-	~Stos_a();
+	~Stos();
 /*!
 	\brief Wrzuca element na szczyt stosu.
 */
@@ -42,8 +44,14 @@ public:
 	int pop();
 /*!
 	\brief Sprawdza, czy stos jest pusty.
+
+	\return Zwraca prawdę, jeżeli kolejka jest pusta. W przeciwnym razie zwraca false.
 */
 	bool empty();
+/*!
+	\brief Zwraca rozmiar stosu.
+*/
+	int size(){return rozmiar_stosu;}
 };
-
+}
 #endif
