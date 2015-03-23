@@ -36,7 +36,8 @@ int arr::Kolejka::pop()
 	// 'Opuszczanie' całej kolejki o 1 w dół
 	for(int i = 0; i < rozmiar_kol - 1; ++i)
 		this->tablica[i] = this->tablica[i+1];
-		
+	--this->rozmiar_kol;
+
 	return(zwracana);	
 }
 

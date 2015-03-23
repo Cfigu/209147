@@ -23,7 +23,7 @@ void arr::Kolejka::push(int val)
 		this->tablica[rozmiar_kol] = val;
 	else
 	{
-		this->rozszerz_1();
+		this->rozszerz_x2();
 		this->tablica[rozmiar_kol] = val;
 	}
 	++this->rozmiar_kol;
@@ -37,6 +37,7 @@ int arr::Kolejka::pop()
 	for(int i = 0; i < rozmiar_kol - 1; ++i)
 		this->tablica[i] = this->tablica[i+1];
 	--this->rozmiar_kol;
+
 	return(zwracana);	
 }
 

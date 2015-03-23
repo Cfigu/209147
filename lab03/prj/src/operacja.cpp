@@ -6,14 +6,17 @@
  */
 
 #include "../inc/operacja.h"
-#include <iostream>
+#include <stack>
+#include <queue>
+#include <list>
 
 clock_t operacja(std::vector<int> &wektor, unsigned int ilosc_operacji)
 {
 	clock_t czas;
-	arr::Stos sztos;
+	std::list<int> sztos;
+	
 	for(unsigned int i = 0; i < ilosc_operacji; ++i)
-		sztos.push(wektor[i]);
+		sztos.push_back(wektor[i]);
 	// Zapisanie czasu wykonywania operacji
 	czas = clock();
 	// Zwalnianie pamięci, nie liczone przez zegar.

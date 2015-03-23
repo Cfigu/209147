@@ -23,7 +23,7 @@ public:
 /*! 
 	\brief Konstruktor domyślny klasy Stos. 
 */
-	Stos(): tablica(NULL), rozmiar_stosu(0), pojemnosc_stosu(0){}
+	Stos(): tablica(new int), rozmiar_stosu(0), pojemnosc_stosu(1){}
 /*!
 	\brief Konstruktor kopiujący klasy Stos.
 	

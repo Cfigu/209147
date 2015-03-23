@@ -23,7 +23,7 @@ void arr::Stos::push(int val)
 		this->tablica[rozmiar_stosu] = val;
 	else
 	{
-		this->rozszerz_1();
+		this->rozszerz_x2();
 		this->tablica[rozmiar_stosu] = val;
 	}
 	++this->rozmiar_stosu;

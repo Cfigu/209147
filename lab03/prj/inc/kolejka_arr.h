@@ -23,7 +23,7 @@ namespace arr
 	/*! 
 		\brief Konstruktor domyślny klasy arr::Kolejka. 
 	*/
-		Kolejka(): tablica(NULL), rozmiar_kol(0), pojemnosc_kol(0){}
+		Kolejka(): tablica(new int), rozmiar_kol(0), pojemnosc_kol(1){}
 	/*!
 		\brief Konstruktor kopiujący klasy arr::Kolejka.
 	

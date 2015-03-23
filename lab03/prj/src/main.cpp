@@ -2,5 +2,5 @@
 
 int main()
 {	
-	//Benchmark();
+	Benchmark();
 }

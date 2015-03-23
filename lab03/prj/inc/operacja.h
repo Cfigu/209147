@@ -12,6 +12,7 @@
 #include "kolejka.h"
 #include "stos_arr.h"
 #include "kolejka_arr.h"
+#include "lista_arr.h"
 
 /*! \brief Wykonuje operację na wczytanym ciągu danych.
  *

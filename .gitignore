@@ -1,0 +1,5 @@
+*.o
+*~
+*.dat
+dox/*
+!Doxyfile

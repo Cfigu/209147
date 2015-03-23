@@ -2,21 +2,32 @@
 
 int main()
 {	
-	ls::Stos sztos;
-	ls::Kolejka kol;
+	arr::Kolejka ls;
+/*
+	ls.insert(1,0);
+	ls.insert(2,0);
+	ls.insert(3,1);
+	ls.insert(4,2);
+	ls.insert(5,3);
+	
+	std::cout << std::endl << ls.erase(0);
+	std::cout << std::endl << ls.erase(0);
+	std::cout << std::endl << ls.erase(0);
+	std::cout << std::endl << ls.erase(0);
+	std::cout << std::endl << ls.erase(0);
+*/
 
-	sztos.push(23);
-	sztos.push(54);
+	ls.push(1);
+	ls.push(2);
+	ls.push(3);
+	ls.push(4);
+	ls.push(5);
 
-	std::cout << sztos.pop() << std::endl;
-	std::cout << sztos.pop() << std::endl;
-	std::cout << sztos.size() << std::endl;
+	std::cout << std::endl << ls.pop();
+	std::cout << std::endl << ls.pop();	
+	std::cout << std::endl << ls.pop();
+	std::cout << std::endl << ls.pop();
+	std::cout << std::endl << ls.pop();
 
-	kol.push(98);
-	kol.push(12);
-
-	std::cout << kol.pop() << std::endl;
-	std::cout << kol.pop() << std::endl;
-	std::cout << kol.size() << std::endl;
-	//Benchmark();
+//Benchmark();
 }
