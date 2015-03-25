@@ -13,10 +13,10 @@
 clock_t operacja(std::vector<int> &wektor, unsigned int ilosc_operacji)
 {
 	clock_t czas;
-	std::list<int> sztos;
+	arr::Lista sztos;
 	
 	for(unsigned int i = 0; i < ilosc_operacji; ++i)
-		sztos.push_back(wektor[i]);
+		sztos.insert(wektor[i], 0);
 	// Zapisanie czasu wykonywania operacji
 	czas = clock();
 	// Zwalnianie pamięci, nie liczone przez zegar.

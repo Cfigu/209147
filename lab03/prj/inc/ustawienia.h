@@ -19,7 +19,7 @@
 /*! Określa jak nazywa się plik wygenerowany przez program 'generuj', jednocześnie pliku o tej nazwie poszukuje program 'program' w katalogu, w którym został uruchomiony. */
 #define NAZWA_PLIKU_WE "dane.dat"
 /*! Tak nazywać się będzie wygenerowany przez program 'program' plik z wynikami przeprowadzonych pomiarów.*/
-#define NAZWA_PLIKU_WY "wyniki_kolejka.dat"
+#define NAZWA_PLIKU_WY "arr_lista_1.dat"
 /*! Tyle razy zostanie powtórzoy pomiar dla jednego zestawu danych. */
 #define ILOSC_POWTORZEN 10
 

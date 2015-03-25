@@ -11,7 +11,7 @@ int arr::Lista::erase(int indeks)
 
 	// Zmniejszanie indeksu częśći elementów o 1
 	for(int i = indeks; i < this->rozmiar_ls; ++i)
-		tablica[i] = tablica[i+1];
+		this->tablica[i] = this->tablica[i+1];
 	--this->rozmiar_ls;
 
 	return zwracana;
@@ -31,8 +31,8 @@ void arr::Lista::insert(int value, int indeks)
 	else
 	{
 		// Podnoszenie indeksu częśći elementów o 1
-		for(int i = this->rozmiar_ls; i >= indeks; --i)
-			tablica[i+1] = tablica[i];
+		for(int i = this->rozmiar_ls; i > indeks; --i)
+			this->tablica[i] = this->tablica[i-1];
 
 		// Wstawianie nowej wartości w odpowiednie miejsce
 		tablica[indeks] = value;
